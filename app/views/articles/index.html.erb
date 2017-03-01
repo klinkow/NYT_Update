@@ -1,0 +1,35 @@
+<h1>News Feed</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><h3>title</h3></td>
+      <td><h3>section</h3></td>
+      <td><h3>subsection</h3></td>
+      <td><h3>abstract</h3></td>
+      <td><h3>per_facet</h3></td>
+      <td><h3>geo_facet</h3></td>
+    </tr>
+    <% @newses.each do |news| %>
+      <tr>
+        <td><u><%= news["title"] %></u></td>
+        <td><%= news["section"] %></td>
+        <td><%= news["subsection"] %></td>
+        <td><%= news["abstract"] %></td>
+        <td><%= news["per_facet"] %></td>
+        <td><%= news["geo_facet"] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<p><%= @newses.first %></p>
+
+
+
+<%= link_to "Generate New Article", new_article_path %>
