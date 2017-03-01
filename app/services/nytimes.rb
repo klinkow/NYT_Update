@@ -15,6 +15,17 @@ class Nytimes
   end
 
 
+  def rest_client
+    # RestClient.get 'https://api.nytimes.com/svc/topstories/v2/home.json', {params: {id: 50, 'foo' => 'bar'}}
+  end
+
+
+  def httparty
+
+  end
+
+
+
   def sort_us_politics(articles)
     results = []
     articles.each do |article|
@@ -24,13 +35,6 @@ class Nytimes
     end
     return results
   end
-
-
-  def rest_client
-    # RestClient.get 'https://api.nytimes.com/svc/topstories/v2/home.json', {params: {id: 50, 'foo' => 'bar'}}
-  end
-
-
 
 
 end
