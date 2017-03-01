@@ -17,7 +17,7 @@
     </tr>
     <% @newses.each do |news| %>
       <tr>
-        <td><u><%= news["title"] %></u></td>
+        <td><h4><%= news["title"] %></h4></td>
         <td><%= news["section"] %></td>
         <td><%= news["subsection"] %></td>
         <td><%= news["abstract"] %></td>
@@ -27,9 +27,5 @@
     <% end %>
   </tbody>
 </table>
-
-<p><%= @newses.first %></p>
-
-
 
 <%= link_to "Generate New Article", new_article_path %>
