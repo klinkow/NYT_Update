@@ -44,11 +44,63 @@ class TriviaDB
 
 
 
-  def get_TriviaDB
-    response = RestClient.get('https://www.opentdb.com/api.php?amount=10&category=21&difficulty=easy&type=multiple')
+  def get_TriviaDB(category, difficulty, answer_type)
+    if category === 'General Knowledge'
+      category = "&category=9"
+    elsif category === 'Books'
+      category = "&category=10"
+    elsif category === 'Film'
+      category = "&category=11"
+    elsif category === 'Music'
+      category = "&category=12"
+    elsif category === 'Musicals/Theater'
+      category = "&category=13"
+    elsif category === 'TV'
+      category = "&category=14"
+    elsif category === 'Video Games'
+      category = "&category=15"
+    elsif category === 'Science'
+      category = "&category=17"
+    elsif category === 'Math'
+      category = "&category=19"
+    elsif category === 'Sports'
+      category = "&category=21"
+    elsif category === 'Geography'
+      category = "&category=22"
+    elsif category === 'History'
+      category = "&category=23"
+    elsif category === 'Art'
+      category = "&category=25"
+    elsif category === 'Any'
+      category = ""
+    end
+
+    if difficulty === 'easy'
+      difficulty = "&difficulty=easy"
+    elsif difficulty === 'medium'
+      difficulty = "&difficulty=medium"
+    elsif difficulty === 'hard'
+      difficulty = "&difficulty=hard"
+    elsif difficulty === 'any'
+      difficulty = ""
+    end
+
+    if answer_type === 'True/False'
+      answer_type = "&type=boolean"
+    elsif answer_type === 'Multiple Choice'
+      answer_type = "&type=multiple"
+    elsif answer_type === 'any'
+      answer_type = ""
+    end
+
+    response = RestClient.get('https://www.opentdb.com/api.php?amount=1' + category + difficulty + answer_type)
     @parsed_response = JSON.parse(response)
     @parsed_response = @parsed_response['results']
     return @parsed_response
+
   end
+
+
+
 
 end
