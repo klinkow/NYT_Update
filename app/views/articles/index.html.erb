@@ -1,4 +1,4 @@
-<h1>News Feed</h1>
+<h1 class="center-align">News Feed</h1>
 
 <table>
   <thead>
@@ -28,9 +28,22 @@
   </tbody>
 </table>
 
-<hr>
-    <p><%= @questions %></p>
-<hr>
+<table>
+  <tbody>
+    <hr>
+      <% @questions.each do |question| %>
+        <tr>
+          <td><h4><%= question["question"] %></h4></td>
+          <td><%= question["category"] %></td>
+          <td><%= question["type"] %></td>
+          <td><%= question["difficulty"] %></td>
+          <td><%= question["correct_answer"] %></td>
+          <td><%= question["incorrect_answers"] %></td>
+        </tr>
+      <% end %>
+    <hr>
+  </tbody>
+</table>
 
 
 <%= link_to "Generate New Article", new_article_path %>
