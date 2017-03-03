@@ -1,6 +1,9 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    RubyInline (3.12.4)
+      ZenTest (~> 4.3)
+    ZenTest (4.11.1)
     actioncable (5.0.1)
       actionpack (= 5.0.1)
       nio4r (~> 1.2)
@@ -89,6 +92,8 @@ GEM
       factory_girl (~> 4.8.0)
       railties (>= 3.0.0)
     ffi (1.9.17)
+    fuzzy-string-match (0.9.7)
+      RubyInline (>= 3.8.6)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     hashdiff (0.3.2)
@@ -260,6 +265,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   factory_girl_rails (~> 4.0)
+  fuzzy-string-match (~> 0.9.7)
   htmlentities
   jquery-rails
   launchy

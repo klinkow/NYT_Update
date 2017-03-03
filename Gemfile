@@ -14,6 +14,7 @@ gem "paperclip", "~> 5.0.0"
 gem 'rest-client'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'htmlentities'
+gem 'fuzzy-string-match', '~> 0.9.7'
 
 group :development, :test do
   gem 'byebug', platform: :mri

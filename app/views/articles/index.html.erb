@@ -1,5 +1,12 @@
 <h1 class="center-align">News Feed</h1>
 
+<% require 'fuzzystringmatch' %>
+<% jarow = FuzzyStringMatch::JaroWinkler.create(:native) %>
+<h3><%= jarow.getDistance('jones', 'johnson') %></h3>
+
+
+
+
 <table>
   <thead>
     <tr>
@@ -33,12 +40,12 @@
     <hr>
       <% @questions.each do |question| %>
         <tr>
-          <td><h4><%= HTMLEntities.new.decode question["question"] %></h4></td>
+          <td><h4><%= HTMLEntities.new.decode(question["question"]) %></h4></td>
           <td><%= question["category"] %></td>
           <td><%= question["type"] %></td>
           <td><%= question["difficulty"] %></td>
-          <td><%= HTMLEntities.new.decode question["correct_answer"] %></td>
-          <td><%= HTMLEntities.new.decode question["incorrect_answers"] %></td>
+          <td><%= HTMLEntities.new.decode(question["correct_answer"]) %></td>
+          <td><%= HTMLEntities.new.decode(question["incorrect_answers"]) %></td>
         </tr>
       <% end %>
     <hr>
