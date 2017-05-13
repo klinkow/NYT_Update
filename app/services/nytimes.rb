@@ -16,6 +16,7 @@ class Nytimes
     request = Net::HTTP::Get.new(uri.request_uri)
     @result = JSON.parse(http.request(request).body)
     @results = @result["results"]
+    File.open("NYTimesOutput.rb", 'w') { |file| file.write(@results) }
     return @results
   end
 
