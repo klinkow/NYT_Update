@@ -2,7 +2,7 @@ class ArticlesController < ActionController::Base
   def index
     @articles = Article.all
     @newses = Nytimes.new().get_NYT()
-    @questions = TriviaDB.new().get_TriviaDB("Books", "easy", "any")
+    @questions = TriviaDB.new().get_TriviaDB("Math", "medium", "Multiple Choice")
   end
 
   def new

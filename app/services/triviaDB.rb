@@ -49,7 +49,7 @@ class TriviaDB
       category = "&category=9"
     elsif category === 'Books'
       category = "&category=10"
-    elsif category === 'Film'
+    elsif category === 'Movies'
       category = "&category=11"
     elsif category === 'Music'
       category = "&category=12"
@@ -93,7 +93,7 @@ class TriviaDB
       answer_type = ""
     end
 
-    response = RestClient.get('https://www.opentdb.com/api.php?amount=1' + category + difficulty + answer_type)
+    response = RestClient.get('https://www.opentdb.com/api.php?amount=10' + category + difficulty + answer_type)
     @parsed_response = JSON.parse(response)
     @parsed_response = @parsed_response['results']
     return @parsed_response
